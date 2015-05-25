@@ -1,0 +1,21 @@
+﻿@model EPiServerVisitorGroups.Models.Pages.HomePage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>@Model.PageName</h1>
+
+        <div>@Html.PropertyFor(model => model.ContentBlocks)</div>
+    </div>
+</body>
+</html>
