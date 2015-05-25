@@ -41,7 +41,6 @@ namespace EPiServerVisitorGroups.Business.Personalization
         /// <returns></returns>
         private string GetUserIPAddress(HttpContextBase context)
         {
-            return "92.110.170.200";
             if (context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] != null)
             {
                 return context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"].ToString();
