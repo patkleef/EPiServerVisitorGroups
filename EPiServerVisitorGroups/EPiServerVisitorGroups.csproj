@@ -187,6 +187,7 @@
       <Private>True</Private>
       <HintPath>packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
@@ -229,7 +230,12 @@
   <ItemGroup>
     <Compile Include="Business\Geo\GeoCoordinates.cs" />
     <Compile Include="Business\Geo\IGeoService.cs" />
+    <Compile Include="Business\Initialization\IocContainerInitialization.cs" />
+    <Compile Include="Business\Initialization\StructureMapDependencyResolver.cs" />
+    <Compile Include="Business\IPResolver\CustomClientIPAddressResolver.cs" />
+    <Compile Include="Business\Personalization\CountryCriterion.cs" />
     <Compile Include="Business\Personalization\WeatherCriterion.cs" />
+    <Compile Include="Business\Personalization\CountryCriterionSettings.cs" />
     <Compile Include="Business\Personalization\WeatherCriterionSettings.cs" />
     <Compile Include="Business\Geo\GeoService.cs" />
     <Compile Include="Business\Utils\IHttpRequestUtils.cs" />
@@ -253,9 +259,13 @@
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientResources\Scripts\fields\CountriesSelectField.js" />
+    <Content Include="ClientResources\Scripts\fields\templates\CountriesSelectFieldTemplate.html" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\GeoLiteCity.dat" />
     <None Include="EPiServerLog.config" />
     <Content Include="packages.config" />
@@ -267,6 +277,9 @@
     <Content Include="modules\_protected\EPiServer.Packaging.UI\EPiServer.Packaging.UI.zip" />
     <Content Include="Views\HomePage\Index.cshtml" />
     <Content Include="Views\ContentBlock\Index.cshtml" />
+    <Content Include="module.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
